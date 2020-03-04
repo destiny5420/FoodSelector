@@ -1,0 +1,658 @@
+*, *::before, *::after {
+  box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #e3edf7;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px 1px #c3ccd4, -5px -5px 10px 1px #ffffffbe; }
+
+.container {
+  margin: 20px 30px;
+  border: 1px solid rgba(49, 69, 106, 0);
+  padding: 0; }
+  .container #title {
+    margin: 0px 0;
+    padding: 50px 0px; }
+    .container #title h1 {
+      width: 100%;
+      text-align: center;
+      color: rgba(49, 69, 106, 0.5);
+      display: block;
+      margin: 0px auto;
+      font-size: 16px; }
+  .container .random_box {
+    padding: 15px;
+    margin: 0px auto 20px auto;
+    padding: 0;
+    text-align: center; }
+    .container .random_box div {
+      width: 450px;
+      height: 50px;
+      position: relative;
+      top: 10px;
+      margin: 0 auto;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      background: #e3edf7;
+      box-shadow: 3px 3px 5px 1px #c5ced7, -3px -3px 5px 1px #ffffffbe; }
+    .container .random_box h1 {
+      margin: 0;
+      padding: 0px 0px;
+      font-size: 2rem; }
+  .container .map {
+    margin: 10px auto;
+    height: 400px;
+    width: 450px;
+    border: 1px solid rgba(49, 69, 106, 0.6);
+    border-radius: 2px; }
+  .container .function {
+    margin: 10px auto;
+    width: 450px; }
+    .container .function > div {
+      position: relative;
+      padding: 22px 0px;
+      width: 450px; }
+    .container .function #option {
+      position: static;
+      display: inline-block;
+      border-radius: 10px;
+      width: 300px;
+      height: 100px;
+      background-color: #e3edf7;
+      box-shadow: 5px 5px 8px 1px #c5ced7, -5px -5px 8px 1px #ffffffbe; }
+      .container .function #option ul {
+        position: relative;
+        padding: 0;
+        margin: 23px auto;
+        width: 250px; }
+        .container .function #option ul li {
+          list-style: none;
+          float: left;
+          background-color: #e3edf7;
+          width: 50%;
+          text-align: center; }
+          .container .function #option ul li .off {
+            color: rgba(49, 69, 106, 0.35);
+            background-color: #e3edf7;
+            border-radius: 10px;
+            box-shadow: 5px 5px 8px 1px #c5ced7, -5px -5px 8px 1px #ffffffbe; }
+          .container .function #option ul li .on {
+            color: rgba(49, 69, 106, 0.35);
+            background-color: #e3edf7;
+            border-radius: 10px;
+            box-shadow: inset 2px 2px 4px #c5ced7, inset -2px -2px 4px #ffffff; }
+          .container .function #option ul li span {
+            display: inline-block;
+            height: 50px;
+            width: 50px; }
+            .container .function #option ul li span i {
+              line-height: 50px; }
+    .container .function #random {
+      position: absolute;
+      right: 0;
+      display: inline-block;
+      background-color: rgba(49, 69, 106, 0.5);
+      border-radius: 300px;
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(145deg, #f3feff, #ccd5de);
+      box-shadow: 5px 5px 10px #c3ccd4, -5px -5px 10px #ffffffbe; }
+      .container .function #random span {
+        position: absolute;
+        right: 30px;
+        color: rgba(49, 69, 106, 0.35);
+        font-size: 40px;
+        text-align: center;
+        line-height: 100px; }
+        .container .function #random span:hover {
+          color: rgba(49, 69, 106, 0.45); }
+
+.confirmBtn {
+  text-decoration: none; }
+
+.wrap {
+  display: block;
+  overflow: hidden;
+  max-height: 2.3rem;
+  margin-top: 4px; }
+  .wrap span {
+    position: relative;
+    display: block;
+    color: rgba(49, 69, 106, 0.664);
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; }
+
+@keyframes spin-1 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 1); } }
+.wrap > .span-1 {
+  animation-name: spin-1;
+  animation-duration: 0.1s; }
+
+@keyframes spin-2 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 2); } }
+.wrap > .span-2 {
+  animation-name: spin-2;
+  animation-duration: 0.2s; }
+
+@keyframes spin-3 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 3); } }
+.wrap > .span-3 {
+  animation-name: spin-3;
+  animation-duration: 0.3s; }
+
+@keyframes spin-4 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 4); } }
+.wrap > .span-4 {
+  animation-name: spin-4;
+  animation-duration: 0.4s; }
+
+@keyframes spin-5 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 5); } }
+.wrap > .span-5 {
+  animation-name: spin-5;
+  animation-duration: 0.5s; }
+
+@keyframes spin-6 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 6); } }
+.wrap > .span-6 {
+  animation-name: spin-6;
+  animation-duration: 0.6s; }
+
+@keyframes spin-7 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 7); } }
+.wrap > .span-7 {
+  animation-name: spin-7;
+  animation-duration: 0.7s; }
+
+@keyframes spin-8 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 8); } }
+.wrap > .span-8 {
+  animation-name: spin-8;
+  animation-duration: 0.8s; }
+
+@keyframes spin-9 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 9); } }
+.wrap > .span-9 {
+  animation-name: spin-9;
+  animation-duration: 0.9s; }
+
+@keyframes spin-10 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 10); } }
+.wrap > .span-10 {
+  animation-name: spin-10;
+  animation-duration: 1s; }
+
+@keyframes spin-11 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 11); } }
+.wrap > .span-11 {
+  animation-name: spin-11;
+  animation-duration: 1.1s; }
+
+@keyframes spin-12 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 12); } }
+.wrap > .span-12 {
+  animation-name: spin-12;
+  animation-duration: 1.2s; }
+
+@keyframes spin-13 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 13); } }
+.wrap > .span-13 {
+  animation-name: spin-13;
+  animation-duration: 1.3s; }
+
+@keyframes spin-14 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 14); } }
+.wrap > .span-14 {
+  animation-name: spin-14;
+  animation-duration: 1.4s; }
+
+@keyframes spin-15 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 15); } }
+.wrap > .span-15 {
+  animation-name: spin-15;
+  animation-duration: 1.5s; }
+
+@keyframes spin-16 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 16); } }
+.wrap > .span-16 {
+  animation-name: spin-16;
+  animation-duration: 1.6s; }
+
+@keyframes spin-17 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 17); } }
+.wrap > .span-17 {
+  animation-name: spin-17;
+  animation-duration: 1.7s; }
+
+@keyframes spin-18 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 18); } }
+.wrap > .span-18 {
+  animation-name: spin-18;
+  animation-duration: 1.8s; }
+
+@keyframes spin-19 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 19); } }
+.wrap > .span-19 {
+  animation-name: spin-19;
+  animation-duration: 1.9s; }
+
+@keyframes spin-20 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 20); } }
+.wrap > .span-20 {
+  animation-name: spin-20;
+  animation-duration: 2s; }
+
+@keyframes spin-21 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 21); } }
+.wrap > .span-21 {
+  animation-name: spin-21;
+  animation-duration: 2.1s; }
+
+@keyframes spin-22 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 22); } }
+.wrap > .span-22 {
+  animation-name: spin-22;
+  animation-duration: 2.2s; }
+
+@keyframes spin-23 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 23); } }
+.wrap > .span-23 {
+  animation-name: spin-23;
+  animation-duration: 2.3s; }
+
+@keyframes spin-24 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 24); } }
+.wrap > .span-24 {
+  animation-name: spin-24;
+  animation-duration: 2.4s; }
+
+@keyframes spin-25 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 25); } }
+.wrap > .span-25 {
+  animation-name: spin-25;
+  animation-duration: 2.5s; }
+
+@keyframes spin-26 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 26); } }
+.wrap > .span-26 {
+  animation-name: spin-26;
+  animation-duration: 2.6s; }
+
+@keyframes spin-27 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 27); } }
+.wrap > .span-27 {
+  animation-name: spin-27;
+  animation-duration: 2.7s; }
+
+@keyframes spin-28 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 28); } }
+.wrap > .span-28 {
+  animation-name: spin-28;
+  animation-duration: 2.8s; }
+
+@keyframes spin-29 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 29); } }
+.wrap > .span-29 {
+  animation-name: spin-29;
+  animation-duration: 2.9s; }
+
+@keyframes spin-30 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 30); } }
+.wrap > .span-30 {
+  animation-name: spin-30;
+  animation-duration: 3s; }
+
+@keyframes spin-31 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 31); } }
+.wrap > .span-31 {
+  animation-name: spin-31;
+  animation-duration: 3.1s; }
+
+@keyframes spin-32 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 32); } }
+.wrap > .span-32 {
+  animation-name: spin-32;
+  animation-duration: 3.2s; }
+
+@keyframes spin-33 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 33); } }
+.wrap > .span-33 {
+  animation-name: spin-33;
+  animation-duration: 3.3s; }
+
+@keyframes spin-34 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 34); } }
+.wrap > .span-34 {
+  animation-name: spin-34;
+  animation-duration: 3.4s; }
+
+@keyframes spin-35 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 35); } }
+.wrap > .span-35 {
+  animation-name: spin-35;
+  animation-duration: 3.5s; }
+
+@keyframes spin-36 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 36); } }
+.wrap > .span-36 {
+  animation-name: spin-36;
+  animation-duration: 3.6s; }
+
+@keyframes spin-37 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 37); } }
+.wrap > .span-37 {
+  animation-name: spin-37;
+  animation-duration: 3.7s; }
+
+@keyframes spin-38 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 38); } }
+.wrap > .span-38 {
+  animation-name: spin-38;
+  animation-duration: 3.8s; }
+
+@keyframes spin-39 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 39); } }
+.wrap > .span-39 {
+  animation-name: spin-39;
+  animation-duration: 3.9s; }
+
+@keyframes spin-40 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 40); } }
+.wrap > .span-40 {
+  animation-name: spin-40;
+  animation-duration: 4s; }
+
+@keyframes spin-41 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 41); } }
+.wrap > .span-41 {
+  animation-name: spin-41;
+  animation-duration: 4.1s; }
+
+@keyframes spin-42 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 42); } }
+.wrap > .span-42 {
+  animation-name: spin-42;
+  animation-duration: 4.2s; }
+
+@keyframes spin-43 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 43); } }
+.wrap > .span-43 {
+  animation-name: spin-43;
+  animation-duration: 4.3s; }
+
+@keyframes spin-44 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 44); } }
+.wrap > .span-44 {
+  animation-name: spin-44;
+  animation-duration: 4.4s; }
+
+@keyframes spin-45 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 45); } }
+.wrap > .span-45 {
+  animation-name: spin-45;
+  animation-duration: 4.5s; }
+
+@keyframes spin-46 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 46); } }
+.wrap > .span-46 {
+  animation-name: spin-46;
+  animation-duration: 4.6s; }
+
+@keyframes spin-47 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 47); } }
+.wrap > .span-47 {
+  animation-name: spin-47;
+  animation-duration: 4.7s; }
+
+@keyframes spin-48 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 48); } }
+.wrap > .span-48 {
+  animation-name: spin-48;
+  animation-duration: 4.8s; }
+
+@keyframes spin-49 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 49); } }
+.wrap > .span-49 {
+  animation-name: spin-49;
+  animation-duration: 4.9s; }
+
+@keyframes spin-50 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 50); } }
+.wrap > .span-50 {
+  animation-name: spin-50;
+  animation-duration: 5s; }
+
+@keyframes spin-51 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 51); } }
+.wrap > .span-51 {
+  animation-name: spin-51;
+  animation-duration: 5.1s; }
+
+@keyframes spin-52 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 52); } }
+.wrap > .span-52 {
+  animation-name: spin-52;
+  animation-duration: 5.2s; }
+
+@keyframes spin-53 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 53); } }
+.wrap > .span-53 {
+  animation-name: spin-53;
+  animation-duration: 5.3s; }
+
+@keyframes spin-54 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 54); } }
+.wrap > .span-54 {
+  animation-name: spin-54;
+  animation-duration: 5.4s; }
+
+@keyframes spin-55 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 55); } }
+.wrap > .span-55 {
+  animation-name: spin-55;
+  animation-duration: 5.5s; }
+
+@keyframes spin-56 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 56); } }
+.wrap > .span-56 {
+  animation-name: spin-56;
+  animation-duration: 5.6s; }
+
+@keyframes spin-57 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 57); } }
+.wrap > .span-57 {
+  animation-name: spin-57;
+  animation-duration: 5.7s; }
+
+@keyframes spin-58 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 58); } }
+.wrap > .span-58 {
+  animation-name: spin-58;
+  animation-duration: 5.8s; }
+
+@keyframes spin-59 {
+  from {
+    top: 0; }
+  to {
+    top: calc(-73px * 59); } }
+.wrap > .span-59 {
+  animation-name: spin-59;
+  animation-duration: 5.9s; }
+
+/*# sourceMappingURL=style.css.map */
