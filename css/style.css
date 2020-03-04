@@ -61,7 +61,7 @@ body {
       width: 300px;
       height: 100px;
       background-color: #e3edf7;
-      box-shadow: 5px 5px 8px 1px #c5ced7, -5px -5px 8px 1px #ffffffbe; }
+      box-shadow: 4px 4px 5px 1px #c5ced7, -2px -3px 5px 2px #ffffffbe; }
       .container .function #option ul {
         position: relative;
         padding: 0;
@@ -77,12 +77,12 @@ body {
             color: rgba(49, 69, 106, 0.35);
             background-color: #e3edf7;
             border-radius: 10px;
-            box-shadow: 5px 5px 8px 1px #c5ced7, -5px -5px 8px 1px #ffffffbe; }
+            box-shadow: 5px 5px 5px -2px #c5ced7, -2px -2px 5px 1px #ffffffbe; }
           .container .function #option ul li .on {
             color: rgba(49, 69, 106, 0.35);
             background-color: #e3edf7;
             border-radius: 10px;
-            box-shadow: inset 2px 2px 4px #c5ced7, inset -2px -2px 4px #ffffff; }
+            box-shadow: inset 2px 3px 2px #c5ced7, inset -2px -2px 3px #ffffff; }
           .container .function #option ul li span {
             display: inline-block;
             height: 50px;

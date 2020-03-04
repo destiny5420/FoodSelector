@@ -1,5 +1,43 @@
 const url = 'https://spreadsheets.google.com/feeds/list/1c33GbQbLi5K-7smmt9wHCeP2FLtonx9PBJ1Y5k_j61Q/1/public/values?alt=json'
 const duration = 1000;
+let bTaipeiSataus = true;
+let bTaichungSataus = false;
+
+$(document).ready(function(){
+    $("#taipei").click(function (e) { 
+        e.preventDefault();
+        $('#taipei').removeAttr('class');
+        $('#taichung').removeAttr('class');
+        bTaipeiSataus = !bTaipeiSataus;
+        bTaichungSataus = !bTaipeiSataus;
+        
+        let sStateTaipei = bTaipeiSataus == true ? 'on' : 'off';
+        let sStateTaichung = bTaipeiSataus == false ? 'on' : 'off';
+        $('#taipei').attr('class', sStateTaipei);
+        $('#taichung').attr('class', sStateTaichung);
+
+        console.log('Click taipei button! / TaipeiSataus: ' + bTaipeiSataus + ' / TaichungSataus: ' + bTaichungSataus);
+    });
+
+    $("#taichung").click(function (e) { 
+        e.preventDefault();
+        $('#taipei').removeAttr('class');
+        $('#taichung').removeAttr('class');
+        bTaichungSataus = !bTaichungSataus;
+        bTaipeiSataus = !bTaichungSataus;
+        
+        let sStateTaipei = bTaipeiSataus == true ? 'on' : 'off';
+        let sStateTaichung = bTaipeiSataus == false ? 'on' : 'off';
+        $('#taipei').attr('class', sStateTaipei);
+        $('#taichung').attr('class', sStateTaichung);
+
+        console.log('Click taipei button! / TaipeiSataus: ' + bTaipeiSataus + ' / TaichungSataus: ' + bTaichungSataus);
+    });
+});
+
+function toggleArea(){
+
+}
 
 fetch(url)
     .then(res => res.json())
@@ -23,11 +61,9 @@ fetch(url)
         let result;
 
         $('.confirmBtn').click(function (e) { 
-
             e.preventDefault();
             e.target.classList.add('not-allow');
-            chooseShop(taichung);
-
+            chooseShop(bTaipeiSataus == true ? taipei : taichung);
         });
     })
 
