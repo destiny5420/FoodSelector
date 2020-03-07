@@ -52,22 +52,24 @@ fetch(url)
             d[i].gsx$area.$t === 'taipei' ? taipei.push(d[i].gsx$name.$t) : taichung.push(d[i].gsx$name.$t);
         }
         
-        console.table(taipei);
-        console.table(taichung);
+        // console.table(taipei);
+        // console.table(taichung);
 
         let ramdomNum;
         let max;
         let min;
         let result;
+        
+        const map = document.querySelector('.map iframe');
 
         $('.confirmBtn').click(function (e) { 
             e.preventDefault();
             e.target.classList.add('not-allow');
-            chooseShop(bTaipeiSataus == true ? taipei : taichung);
+            chooseShop(bTaipeiSataus == true ? taipei : taichung, map);
         });
     })
 
-function chooseShop(data) {
+function chooseShop(data, map) {
 
     // clear & insert
     let inputSlot = document.querySelector('.wrap');
@@ -84,13 +86,14 @@ function chooseShop(data) {
 
     let randomIndex = randomNum((data.length - 1), 0);
     let result = data[randomIndex];
-    console.log('Data['+ randomIndex +']: ' + result);
+    // console.log('Data['+ randomIndex +']: ' + result);
     list[0].innerHTML = result;
 
     // remove animation
     setTimeout(() => {
         list.forEach(i =>  i.removeAttribute('class'));
         console.log('Complete animation.');
+        map.src = 'https://www.google.com/maps/embed/v1/place?key=AIzaSyDtu-vNL3cTLQF_Tongrtckzfs8LS4ClkM&q=' + result;
     }, duration);
 }
 
