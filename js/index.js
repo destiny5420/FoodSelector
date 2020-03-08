@@ -16,7 +16,7 @@ $(document).ready(function(){
         $('#taipei').attr('class', sStateTaipei);
         $('#taichung').attr('class', sStateTaichung);
 
-        console.log('Click taipei button! / TaipeiSataus: ' + bTaipeiSataus + ' / TaichungSataus: ' + bTaichungSataus);
+        // console.log('Click taipei button! / TaipeiSataus: ' + bTaipeiSataus + ' / TaichungSataus: ' + bTaichungSataus);
     });
 
     $("#taichung").click(function (e) { 
@@ -31,7 +31,7 @@ $(document).ready(function(){
         $('#taipei').attr('class', sStateTaipei);
         $('#taichung').attr('class', sStateTaichung);
 
-        console.log('Click taipei button! / TaipeiSataus: ' + bTaipeiSataus + ' / TaichungSataus: ' + bTaichungSataus);
+        // console.log('Click taipei button! / TaipeiSataus: ' + bTaipeiSataus + ' / TaichungSataus: ' + bTaichungSataus);
     });
 });
 
@@ -92,8 +92,7 @@ function chooseShop(data, map) {
     // remove animation
     setTimeout(() => {
         list.forEach(i =>  i.removeAttribute('class'));
-        console.log('Complete animation.');
-        map.src = 'https://www.google.com/maps/embed/v1/place?key=AIzaSyDtu-vNL3cTLQF_Tongrtckzfs8LS4ClkM&q=' + result;
+        map.src = 'https://www.google.com/maps/embed/v1/place?key=AIzaSyBrluCtjiOp9sIgSyKWngrRTA31u6KriWE&q=' + result;
     }, duration);
 }
 
