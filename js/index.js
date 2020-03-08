@@ -1,5 +1,43 @@
 const url = 'https://spreadsheets.google.com/feeds/list/1c33GbQbLi5K-7smmt9wHCeP2FLtonx9PBJ1Y5k_j61Q/1/public/values?alt=json'
 const duration = 1000;
+let bTaipeiSataus = true;
+let bTaichungSataus = false;
+
+$(document).ready(function(){
+    $("#taipei").click(function (e) { 
+        e.preventDefault();
+        $('#taipei').removeAttr('class');
+        $('#taichung').removeAttr('class');
+        bTaipeiSataus = !bTaipeiSataus;
+        bTaichungSataus = !bTaipeiSataus;
+        
+        let sStateTaipei = bTaipeiSataus == true ? 'on' : 'off';
+        let sStateTaichung = bTaipeiSataus == false ? 'on' : 'off';
+        $('#taipei').attr('class', sStateTaipei);
+        $('#taichung').attr('class', sStateTaichung);
+
+        // console.log('Click taipei button! / TaipeiSataus: ' + bTaipeiSataus + ' / TaichungSataus: ' + bTaichungSataus);
+    });
+
+    $("#taichung").click(function (e) { 
+        e.preventDefault();
+        $('#taipei').removeAttr('class');
+        $('#taichung').removeAttr('class');
+        bTaichungSataus = !bTaichungSataus;
+        bTaipeiSataus = !bTaichungSataus;
+        
+        let sStateTaipei = bTaipeiSataus == true ? 'on' : 'off';
+        let sStateTaichung = bTaipeiSataus == false ? 'on' : 'off';
+        $('#taipei').attr('class', sStateTaipei);
+        $('#taichung').attr('class', sStateTaichung);
+
+        // console.log('Click taipei button! / TaipeiSataus: ' + bTaipeiSataus + ' / TaichungSataus: ' + bTaichungSataus);
+    });
+});
+
+function toggleArea(){
+
+}
 
 fetch(url)
     .then(res => res.json())
@@ -14,24 +52,24 @@ fetch(url)
             d[i].gsx$area.$t === 'taipei' ? taipei.push(d[i].gsx$name.$t) : taichung.push(d[i].gsx$name.$t);
         }
         
-        console.table(taipei);
-        console.table(taichung);
+        // console.table(taipei);
+        // console.table(taichung);
 
         let ramdomNum;
         let max;
         let min;
         let result;
+        
+        const map = document.querySelector('.map iframe');
 
         $('.confirmBtn').click(function (e) { 
-
             e.preventDefault();
             e.target.classList.add('not-allow');
-            chooseShop(taichung);
-
+            chooseShop(bTaipeiSataus == true ? taipei : taichung, map);
         });
     })
 
-function chooseShop(data) {
+function chooseShop(data, map) {
 
     // clear & insert
     let inputSlot = document.querySelector('.wrap');
@@ -48,13 +86,13 @@ function chooseShop(data) {
 
     let randomIndex = randomNum((data.length - 1), 0);
     let result = data[randomIndex];
-    console.log('Data['+ randomIndex +']: ' + result);
+    // console.log('Data['+ randomIndex +']: ' + result);
     list[0].innerHTML = result;
 
     // remove animation
     setTimeout(() => {
         list.forEach(i =>  i.removeAttribute('class'));
-        console.log('Complete animation.');
+        map.src = 'https://www.google.com/maps/embed/v1/place?key=AIzaSyBrluCtjiOp9sIgSyKWngrRTA31u6KriWE&q=' + result;
     }, duration);
 }
 

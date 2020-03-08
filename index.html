@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>What do you want to eat?</title>
         <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width initial-scale=1.0">
         <script src="js/jquery-3.4.1.js"></script>
         <link rel="stylesheet" href="css/style.css">
+        <link rel="Shortcut Icon" type="image/x-icon" href="img/logo.ico"" />
         <script src="https://kit.fontawesome.com/33b873b92b.js" crossorigin="anonymous"></script>
     </head>
     <body class="container">
@@ -26,7 +30,7 @@
         </div>
 
         <div class="map">
-
+            <iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBrluCtjiOp9sIgSyKWngrRTA31u6KriWE&q=老先覺" allowfullscreen></iframe>
         </div>
 
         <div class="function">
@@ -34,13 +38,13 @@
                 <div id="option">
                     <ul id="list">
                        <li>
-                           <span class="on">
+                           <span id="taipei" class="on">
                                <i>北</i>
                                <!-- <i class="fa fa-home"></i> -->
                            </span>
                        </li>
                        <li>
-                        <span class="off">
+                        <span id="taichung" class="off">
                             <i>中</i>
                             <!-- <i class="fa fa-lightbulb-o"></i> -->
                         </span>
