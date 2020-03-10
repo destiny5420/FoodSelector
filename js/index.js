@@ -2,6 +2,7 @@ const url = 'https://spreadsheets.google.com/feeds/list/1c33GbQbLi5K-7smmt9wHCeP
 const duration = 1000;
 let bTaipeiSataus = true;
 let bTaichungSataus = false;
+let iTableID = 1;
 
 $(document).ready(function(){
     $("#taipei").click(function (e) { 
@@ -15,7 +16,7 @@ $(document).ready(function(){
         let sStateTaichung = bTaipeiSataus == false ? 'on' : 'off';
         $('#taipei').attr('class', sStateTaipei);
         $('#taichung').attr('class', sStateTaichung);
-
+        iTableID = 1;
         // console.log('Click taipei button! / TaipeiSataus: ' + bTaipeiSataus + ' / TaichungSataus: ' + bTaichungSataus);
     });
 
@@ -30,7 +31,7 @@ $(document).ready(function(){
         let sStateTaichung = bTaipeiSataus == false ? 'on' : 'off';
         $('#taipei').attr('class', sStateTaipei);
         $('#taichung').attr('class', sStateTaichung);
-
+        iTableID = 2;
         // console.log('Click taipei button! / TaipeiSataus: ' + bTaipeiSataus + ' / TaichungSataus: ' + bTaichungSataus);
     });
 });

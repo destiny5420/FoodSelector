@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: 'Noto Sans TC', sans-serif;;
+    font-family: 'Noto Sans TC', sans-serif;
     background: #e3edf7;
     // border-radius: 10px;
     // box-shadow: 5px 5px 10px 1px #c3ccd4, 
@@ -20,15 +20,26 @@ body {
 
     #title {
         margin: 0px 0;
-        padding: 50px 0px;
+        padding: 30px 0px;
 
         h1 {
             width: 100%;
-            text-align: center;
+            text-align: left;
             color: rgba(49, 69, 106, 0.5);
             display: block;
             margin: 0px auto;
-            font-size: 16px;
+            font-size: 30px;
+        }
+
+        >div{
+            width: 450px;
+            margin: 0 auto;
+        }
+        
+        #content {
+            font-family: 'Noto Sans TC', sans-serif;
+            color: rgba(133, 148, 175, 0.8);
+            font-size: 18px;
         }
     }
 
@@ -174,7 +185,21 @@ body {
 
         #title {
             margin: 0px 0;
-            padding: 20px 0px;
+            padding: 10px 0px;
+
+            h1 {
+                font-size: 20px;
+            }
+
+            >div{
+                width: 80%;
+            }
+            
+            #content {
+                font-family: 'Noto Sans TC', sans-serif;
+                color: rgba(133, 148, 175, 0.8);
+                font-size: 12px;
+            }
         }
 
         .random_box {
